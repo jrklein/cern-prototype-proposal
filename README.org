@@ -1,0 +1,38 @@
+Proposal document for the CERN prototype detector and running.
+
+* For editors:
+
+Here is a quick start guide to using this repository.  It presents just one way to do things.
+
+** Get started:
+
+The first steps is to "clone" the GitHub repository
+
+#+BEGIN_EXAMPLE
+  $ git clone https://github.com/LBNE/cern-prototype-proposal.git
+  $ cd cern-prototype-proposal/
+  (edit files)
+  $ git add yourfile.tex
+  $ git commit -m -a "Some useful commit message"
+#+END_EXAMPLE
+
+** Updating your repository
+
+To incorporate changes from others into your repository do:
+
+#+BEGIN_EXAMPLE
+  $ git commit -a -m "Some useful commit message"
+  $ git pull
+#+END_EXAMPLE
+
+** Pushing contributions back to GitHub
+
+First, you will need a (free) GitHub account and to send the user name to [[mailto:bv@bnl.gov][bv@bnl.gov]].
+
+To "push" your commits back to GitHub do:
+
+#+BEGIN_EXAMPLE
+  $ git commit -a -m "Some useful commit message"
+  $ git pull
+  $ git push
+#+END_EXAMPLE
