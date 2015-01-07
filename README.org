@@ -6,7 +6,7 @@ Here is a quick start guide to using this repository.  It presents just one way 
 
 ** Get started:
 
-The first steps is to "clone" the GitHub repository
+The first steps is to "=clone=" the GitHub repository
 
 #+BEGIN_EXAMPLE
   $ git clone https://github.com/LBNE/cern-prototype-proposal.git
@@ -18,7 +18,7 @@ The first steps is to "clone" the GitHub repository
 
 ** Updating your repository
 
-To incorporate changes from others into your repository do:
+From time to time you will want to "=pull=" contributions from others into your repository.
 
 #+BEGIN_EXAMPLE
   $ git commit -a -m "Some useful commit message"
@@ -27,12 +27,15 @@ To incorporate changes from others into your repository do:
 
 ** Pushing contributions back to GitHub
 
-First, you will need a (free) GitHub account and to send the user name to [[mailto:bv@bnl.gov][bv@bnl.gov]].
+First, you will need a (free) [[https://github.com/][GitHub account]] and to send the user name to [[mailto:bv@bnl.gov][bv@bnl.gov]].
 
-To "push" your commits back to GitHub do:
+To "=push=" your commits back to GitHub do:
 
 #+BEGIN_EXAMPLE
   $ git commit -a -m "Some useful commit message"
   $ git pull
   $ git push
+  (enter user and password)
 #+END_EXAMPLE
+
+The "=pull=" is needed to first incorporate into your repository any changes that others may have pushed to GitHub since the last time you did a "=pull=".
