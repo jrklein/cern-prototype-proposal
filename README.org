@@ -27,7 +27,7 @@ From time to time you will want to "=pull=" contributions from others into your 
 
 ** Pushing contributions back to GitHub
 
-First, you will need a (free) [[https://github.com/][GitHub account]] and to send the user name to [[mailto:bv@bnl.gov][bv@bnl.gov]].
+First, you will need a (free) [[https://github.com/][GitHub account]] and to send the user name to [[mailto:bv@bnl.gov][bv@bnl.gov]].  Be sure to mention *this* repository.
 
 To "=push=" your commits back to GitHub do:
 
