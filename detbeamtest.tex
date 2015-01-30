@@ -36,7 +36,7 @@ With current detector uncertainties from table \ref{table:deterr} the sensitivit
 \newpage
 
 \subsubsection{Particles energy and direction}
-Plans for running beam for the the ELBNF include both neutrino and anti-neutrino configurations. These beams will be composed  mainly of muon neutrinos (anti-neutrinos) as well as electron neutrinos (anti-neutrinos). To take into account  
+Plans for running beam for the the ELBNF include both neutrino and anti-neutrino configurations. These beams will be composed  mainly of muon neutrinos (anti-neutrinos) as well as electron neutrinos (anti-neutrinos). In figures \ref{fig:particle_momenta} and \ref{fig:particle_theta} the distributions on momenta and angles of particles created in neutrino interaction are shown. 
 
 \begin{figure}[h!]
   \centering
@@ -49,47 +49,106 @@ Plans for running beam for the the ELBNF include both neutrino and anti-neutrino
 \begin{figure}[h!]
   \centering
 \includegraphics[scale=0.4]{figures/True_Theta_per_Particle}
-\label{fig:particle_momenta}
+\label{fig:particle_theta}
   \caption{Particle angle wrt to the beam axis distributions for particles coming from all fluxes ($\nu_e$, $\nu_\mu$, $\bar \nu_e$ and $\bar \nu_\mu$) at both near and far detector locations.  }
 \end{figure}
 
+\newpage
 
-Plots for the  rates for the particles.
+
+\begin{figure}[htp]
+  \centering
+  \label{fig:containment}
+  
+  \begin{tabular}{ccc}
+    \includegraphics[scale=0.15]{figures/electrons_density_overlay}&
+    \includegraphics[scale=0.15]{figures/electrons_lcont_overlay}&
+    \includegraphics[scale=0.15]{figures/electrons_wcont_overlay}\\
+ 
+ 
+    \includegraphics[scale=0.15]{figures/photons_density_overlay}&
+    \includegraphics[scale=0.15]{figures/photons_lcont_overlay}&
+    \includegraphics[scale=0.15]{figures/photons_wcont_overlay}\\
+ 
+
+    \includegraphics[scale=0.15]{figures/protons_density_overlay}&
+    \includegraphics[scale=0.15]{figures/protons_lcont_overlay}&
+    \includegraphics[scale=0.15]{figures/protons_wcont_overlay}\\
+ 
+    \includegraphics[scale=0.15]{figures/pions_density_overlay}&
+    \includegraphics[scale=0.15]{figures/pions_lcont_overlay}&
+    \includegraphics[scale=0.15]{figures/pions_wcont_overlay}\\
+ 
+    \includegraphics[scale=0.15]{figures/pions_density_overlay}&
+    \includegraphics[scale=0.15]{figures/pions_lcont_overlay}&
+    \includegraphics[scale=0.15]{figures/pions_wcont_overlay}\\
+ 
+ 
+    \includegraphics[scale=0.15]{figures/kaons_density_overlay}&
+    \includegraphics[scale=0.15]{figures/kaons_lcont_overlay}&
+    \includegraphics[scale=0.15]{figures/kaons_wcont_overlay}\\
+ 
+  \end{tabular}
+  \caption{Particle containment plots.}
+\end{figure}
+
+\clearpage
 \subsubsection{Particle rates}
-Estimation of the necessary for each particle type and energy bin. 
+Estimation of  beam particles rates  necessary to collect high enough statistics in a reasonable time to obtain goals of of the measurements.
 \subsubsection {Run plan}
 Based of the rates from the beam and required rates from the physics considerations.
-
 
 
 
 \subsection{Detector performance tests}
 
 \subsubsection{Bethe-Bloch parametrisation of charged particles}
-How we compare with Lariat. Energy scale measurement. 
-Multiple scattering.  
 
-The set of single-phase prototype detector help to understand the detector response to cosmic muons. But there is still lots to learn with additional studies. 
+The SPCP will allow to study the detector response to charge particles from the test beam and will serve as a calibration detector. The measured energy deposition for various particles and its dependence on the direction of the particle will feed into our Monte Carlo generator and allow more precise reconstruction of neutrino energy and interactions topologies with good particle identifications.
+ 
+{\bf How we compare with Lariat?} 
+{\bf Multiple scattering}  
 
+The set of single-phase prototype detector helped to understand the detector response to cosmic muons. But there is still lots to learn with additional studies. 
 The charge  particle identification efficiencies  has been mapped for only limited range of the particle energies.  
 
 \subsubsection{e/$\gamma$ separation}
+
+The separation of the electrons from photons is the most important feature of the LAr TPC detectors for the search of the CP violation phase where we look for appearance of the $\nu_e$ in the $\nu_\mu$ beam.  Showers from electrons are part of the signal whilst the single photons might contribute to the background sample. The photons can undergo two process: pair production and Compton scattering. The dominant process for photons with energies of several hundreds MeV  is the e$^+$ e$^-$ pair production, but Compton scattering also occur at this energies. For pair production the e/$\gamma$ separation is achieved by looking at the beginning of the electromagnetic shower, where for election we see energy deposition typical for single MIP and for photon we see energy deposition consisted with two MIP. The separation of e/$\gamma$ has been measured in the ArgoNEUT experiment using neutrino scattering data with low statistics. Currently the separation efficiency is estimated to be at the level of of 94 \% (? cite and check the number). In case of the Compton scattering the off atomic electron the signal is much more difficult to distinguish from the electron from the CC $\nu_e$ scattering.
+
+The separation of  the e/$\gamma$ measured by ArgoNEUT is not sufficient for the ELBNF experiment. Here we propose a measurement of the separation efficiency  as the function of energy and angle.  {\bf we need someone to look into this}
+
+
+
 \subsubsection{Reconstruction efficiencies and particle identification}
+
+The reconstruction of events in the LAr TPC is still a challenge but rapid progress has been achieved in recent years (cite pandora and other reconstruction algorithms). Despite the progress reconstruction algorithms have to rely Monte Carlo predictions which don't simulate liquid argon detectors responses correctly. Reconstruction algorithms will benefit greatly from test beam data particularly from the full scale prototype. The reconstruction algorithms will be trained to correctly reconstruct track, electromagnetic and hadronic showers.
+
+The data of tracks and showers can be used to create a library which can be used for matching with he neutrino data, similar to the  LEM (library event matching).
+
 
 
 
 \subsubsection{Cross section measurements}
-absorption, charge exchange, pions and Kaons, 
+Precise measurement of the  absorption and charge exchange of pions and kaons. Pion absorption is a large part of the pion nunleon cross section from 50 MeV to 500MeV with no data above about 1GeV pion kinetic energy. 
+{\bf Add plots and values for known cross sections wit errors} 
+\begin{itemize}
+\item pion absorption on argon - Kotlinski, EPJ 9, 537 (2000)
+\item pion cross section as a function of A - Gianelli PRC 61, 054615 (2000)
+\end{itemize}
+There is not currently a satisfactory theory describing absorption. The Valencia group (Vicente-Vacus NPA 568, 855 (1994)) developed model of    the pion-nucleus reaction with fairly good agreement, although not in detail. The actual  mechanism of multi-nucleon absorption
+ is not well understood. 
+ 
 \subsubsection{Charge sign determination}
 
 \subsubsection{Single track calibration}
 \subsubsection{Shower calibration}
 
-Charged particles pass through the 
+Reconstruction of neutrino energy depends of a quality of reconstruction of both electromagnetic and hadronic showers. 
 
-- Hadronic shower
-- Electromagnetic shower
-- Missing energy (Neutrons scattering)
+- {\bf features of Hadronic shower in LAr TPC}
+- {\bf features of electromagnetic shower in LAr TPC}
+- Missing energy from neutral (Neutrons scattering)
  
 
 \subsection{Other measurements} 
