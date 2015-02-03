@@ -127,10 +127,18 @@ The reconstruction of events in the LAr TPC is still a challenge but rapid progr
 The data of tracks and showers can be used to create a library which can be used for matching with he neutrino data, similar to the  LEM (library event matching).
 
 
+Main issues for the reconstruction algorithms:
+\begin{itemize}
+\item The reconstruction algorithms try to use all three planes on the signal readout. if the orientation of the track/shower is such that it is aligned with wires on one of the plans it significantly reduces quality of reconstructed objects. 
+\item Calorimetry with collection and induction planes. In the ICARUS experiment the deposited energy was reconstructed from the signal on the collection plane. The induction planes bipolar signal wasn't "stable" enough to use it for calorimetric measurement. In the ELBNF design there is additional shielding  wire plane which will improve the quality of the bipolar signal and the  test beam experiment will help with its calibration.
+\item   Vertexing.
+\item Reconstruction efficiency for low energy particles. The reconstruction algorithm suffer from the lose of fefficiency for low energy particle or particles which leave less than 200-300 hits. Training the algorithms on a low energy particles from the test beam will improve the quality and efficiency of the reconstructed objects.
+\end{itemize}
+
 
 
 \subsubsection{Cross section measurements}
-Precise measurement of the  absorption and charge exchange of pions and kaons. Pion absorption is a large part of the pion nunleon cross section from 50 MeV to 500MeV with no data above about 1GeV pion kinetic energy. 
+Precise measurement of the  absorption and charge exchange of pions and kaons. Pion absorption is a large part of the pion nucleon cross section from 50 MeV to 500MeV with no data above about 1GeV pion kinetic energy. 
 {\bf Add plots and values for known cross sections wit errors} 
 \begin{itemize}
 \item pion absorption on argon - Kotlinski, EPJ 9, 537 (2000)
@@ -140,8 +148,10 @@ There is not currently a satisfactory theory describing absorption. The Valencia
  is not well understood. 
  
 \subsubsection{Charge sign determination}
+It is not possible to determine charge of the particle on the event by event basis with non-magnetised LAr TPC detectors. However, the statistical analyst will be possible. We will fit the muon's half time which is different for muons and antimony due to different muon capture cross sections. For the $\mu^+$ for argon we expect about xx\% to be captured and for $\mu^-$ about yy\%. 
 
 \subsubsection{Single track calibration}
+
 \subsubsection{Shower calibration}
 
 Reconstruction of neutrino energy depends of a quality of reconstruction of both electromagnetic and hadronic showers. 
