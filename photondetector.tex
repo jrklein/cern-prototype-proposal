@@ -1,5 +1,17 @@
-\subsection{Photon Detector}
+\section{Photon Detector}
 This section to provide context and illustrate which aspects need testing at the cERN prototype
 
 \subsection{Introduction}
+
+The ELBNF far detector will utilize liquid argon scintillation light to determine the prompt event time of beam-driven and non-beam events. While the TPC will have far superior spatial resolution to a photon detection system, the drift time for TPC events is on the order of milliseconds. The beam clock will give much better timing resolution than this but a photon detection system can determine the start of an event occurring in the TPC volume (or entering the volume) to about 6~ns, which will be useful in determining the t$_0$ of cosmic ray events, events from radiological decays, and corrections to energy loss of the drifting electrons. 
+A charged particle passing through liquid argon will produce about 40,000 128~nm photons per MeV of deposited energy. At higher fields this will be reduced due to reduced recombination, but at 500 V/cm the yield is still about 20,000 photons per MeV. Roughly 1/3 of the photons are prompt 2-6~ns and 2/3 are generated with a delay of 1100-1600~ns. LAr is highly transparent to the 128~nm VUV photons with a Rayleigh scattering length and absorption length of 95~cm and >200 cm respectively. 
+The relatively large light yield makes the scintillation process an excellent candidate for determination of t0 for non-beam related events. Detection of the scintillation light may also be helpful in background rejection.
+
+Several prototypes of photon detection systems have been developed by the LBNE, now ELBNF, photon detector group over the past few years. There are currently three prototypes under consideration for use in the ELBNF far detector, a baseline design along with two alternate designs. A decision on the final design will be made in September 2015. The CERN neutrino platform ELBNF test would provide the first full scale test of the ELBNF photon detector fully integrated into a full scale TPC anode plane assembly. 
+
+\subsection{Baseline Design (TPB-Coated Acrylic Bars)}
+
+The reference design for the photon detection system is based on acrylic bars that are 200 cm long and 7.63 cm wide, which are coated with a layer of tetraphenyl-butadiene (TPB). The wavelength shifter converts VUV (128 nm) scintillation photons striking it to 430 nm photons inside the bar, with an efficiency of ~50\% of converting a VUV to an optical photon.  A fraction of the wavelength-shifted optical photons are internally reflected to the bar's end where they are detected by SiPMs whose QE is well matched to the 430 nm waveshifted photons. All PD prototypes are currently using SensL MicroFB-6K-35-SMT 6 mm ? 6 mm devices. 
+
+A full 6 m long APA will be divided into 5 bays with 2 PD modules (paddles) instrumenting each bay (Fig.  1). The paddles will be inserted into the frames after the TPC wires have been wrapped around the frames allowing  final assembly at the CERN test location. Two alternative designs are also under consideration. 
 
