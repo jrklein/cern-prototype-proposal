@@ -1,0 +1,61 @@
+The DAQ will merge data to form events from the LArTPC, 
+photon detector and beam detector readouts using the 
+artDAQ data acquisition toolkit using a farm of commercial 
+computers connected with an Ethernet switch.  ArtDAQ is 
+in use on several experiments at Fermilab.  We are using it
+on the 35t prototype, so we will have considerable 
+experience by the time of the CERN test.  
+
+The data collection for the CERN test will operate in a mode 
+similar to that forseen for the underground detectors. In order 
+to collect data from non-beam interactions such as proton decay 
+candidates or atmospheric neutrinos, data will be continuously
+read in to the artDAQ data receiver nodes and processed through
+the artDAQ system in quanta corresponding to time intervals fixed
+from the time of the beginning of the run.  These are then 
+transferred through the switch to a set of event building nodes 
+which work in parallel, each node receiving all the data from all 
+the detectors for the time intervals it is responsible for processing.
+There will be 32 parallel incoming data streams from the LArTPCs
+and 16 streams from the photon detectors.  There will be an additional
+stream from the trigger board (the same board as built by Penn for
+the 35t test will be used) which will receive input of the spill 
+gate, warning of extraction, and pattern-unit bits from trigger counters
+and other beamline instrumentation such as Cerenkov counters [Which 
+section are these described in?, should we refer to them from here?].
+
+Synchronisation across all the input sources is essential in order 
+that artDAQ can bring together the data from the input streams correctly for
+processing by the event building nodes.  The data receiver nodes will provide
+overlap by repeating the data at the boundaries of the time intervals so 
+that a particle whose data spans two time intervals can be collected.  
+The time synchronisation is provided to the RTM back-module on the LArTPC 
+readout crates, to the SSP photon detector readout and to the trigger board from
+a GPS based time synchrononisation distribution system originally designed 
+for the NOvA experiment.  This system includes functionality to calibrate and 
+correct for the cable delays, and to send synchronisation control signals to
+the readout at predetermined times.
+
+The event building nodes will select time regions of interest within the time 
+intervals they are processing and form these into events to be written to 
+disk. The algorithms to select the events may be as simple as looking for 
+a trigger bit in the trigger board data stream, or may involve looking 
+for self-triggered events in the LArTPC data.  An aggregation task, which 
+is part of artDAQ will handle the parallelized event building processes by 
+merging the output events into a single stream and writing them to disk.
+To avoid oversized output data files, when a predetrmined file size is reached, 
+the aggregator will switch to writing to a new file.  The collaboraion 
+requests to CERN, data links of sufficient bandwidth to transfer these files 
+from the CENF to the CERN data center, and from there to locations 
+worldwide for analysis. 
+
+Improved versions of the software systems which are being prototyped at the 
+35t test will available for the CERN test including (a) Run control which 
+controls and monitors the DAQ processes and allows run starts and stops to
+be performed by the operator (b) online monitoring (c) slow control of 
+voltages and temperatures being used by the electronics (this may not be 
+comprehensive by the time of the CERN protoype, but we plan on prototyping 
+the readout of some of the quantities).  The trigger board includes facilities 
+for generating calibration pulses and for identifying the event times of 
+the calibration events.
+
