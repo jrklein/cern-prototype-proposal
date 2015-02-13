@@ -1,3 +1,227 @@
-computing, data handling and software requirements go here
+% moved to main doc \section{Computing requirements, data handling and software}
 
+\subsection{Overview}
+The proposed ``Full Scale'' test of a single-phase Liquid Argon TPC at CERN, performed in the context of the WA105 project and its evolution,
+will build upon the technology and expertise developed in the process of design and operation of its smaller predecessor, the 35t detector at FNAL.
+This includes elements of front-end electronics, data acquisition, run controls and related systems. We also expect that for the most part,
+Monte Carlo studies necessary to support this program will be conducted utilizing software evolved from tools currently used (2015).
+
+In the test-beam setup, the detector performance will be characterized for different types of particles, e.g. $p$, $\pi^{\pm}$, $\mu^{\pm}$ etc.
+Current plans call for measurements in pre-defined bins of the incident particle momentum, which will have widths ranging from tens to
+hunderds of MeV (see~\ref{bin_table}). The volume of data to be recorded shall be determined by the number of events that need to be collected in each measurements that is
+provides adequately low statistical uncertainty of the parameters measured.
+
+In our view, it is optimal to first stage the ``precious'' data collected from the prototype on disk at CERN and then sink it to tape (also at CERN),
+while simultaneously performing replication to data centers in the US. For the latter, FNAL is the prime candidate, with additional data centers at Brookhaven National Laboratory
+and the NERSC facility as useful additional locations for better redundancy and more efficient access to the data from greater number of locations.
+
+\subsection{Collecting and Storing Raw Data}
+
+\subsubsection{Executive Summary}
+As we will show in subsequent sections, the total amount of data to be collected during the prototype operation will be considerable under
+all assumptions and estimates. To fulfill the mission of this test beam experiment, we expect that we will need tape storage of $O(PB)$ size,
+and a more modest disk space for raw data staging at CERN, for replication purposes. There will be additional requirements for processed and
+Monte Carlo data placement which we expect to be mostly done in the US (but not exclusively).
+
+\subsubsection{Event Size Estimates}
+
+In addition to the principal sensitive volume where Liquid Argon will serve as active medium, the prototype will also contain a Photon Detector designed
+to record light pulses produced in Argon due to scintillation caused by ionizing radiation. In any realistic scenario, the amount of data to be produced by
+the Photon Detector will be quite small compared to that of the Liquid Argon TPC. Same goes for other elements of the experimental apparatus (hodoscopes,
+trigger systems etc) and as a result, for the purposes of this section, we wil focus only on the Liquid Argon TPC as the critical and massive source of data.
+
+At the time of writing, work is being done on determination of the physical design of the Liquid Argon prototype, and the number of the Anode Plane Assemblies (APA) to
+be included in the detector is not yet finalized (e.g. 3 vs 6). There is therefore at least a factor of two uncertainty in the number of readout channels in the detector (e.g. 7680 vs 15360).
+This would affect the amount of data produces by DAQ (although not necessarily by a factor of two since a large part of the raw data will be zero-suppressed and accupancy in general
+is expected to be low), and there will be additional tracks (or track segments)  produced by cosmic ray muons. From the two channel count numbers quoted above,
+we assume the smaller number of channels for the purposes of this discussion.
+
+Some estimates for the scale of the data representing a charged track in the 0.5-10.0 GeV range (which is characteristic of the CERN test being planned)
+can be made based on existing earlier calculations for the beam neutrino events as they would appear in the LBNE Far Detector.
+For this we assume digitization rate fixed at 2MHz, and 4312 samples per drift window. The theoretical \textbf{upper limit} on the number of channels above the threshold
+of zero-suppression will be approximately of the order of channel count in a single APA, i.e. around 2500. Since each sample is 16 bit (12 bit is the more recent number),
+we arrive to the limit of approximately 20MB per single charged track. For this class of events, the amount of data will scale roughly linearly with the length of the track (cf. cases
+when a track is stopped or leaves the sensitive volume).
+
+In most cases the data will be zero-suppressed at the source. The data reduction factor will depend on a variety of parameters, but as a rule of thumb
+it's an order of magnitude. We conclude therefore that we will have events of typical size of a few megabyte. We present quantitative estimates in~\ref{bin_table}.
+
+\subsubsection{``Before'' and ``After'' Readout Windows}
+\label{readout_windows}
+
+According to various estimates, given the volume of the LAr prototype, we can expect $O(1)$ cosmic ray tracks to overlay
+the triggered ``beam'' events. This leads to extra data included in each event by a value commensurate with single muons.
+
+In addition to increasing the size of each nominal beam event, there is another consequence of this type of background.
+Since one of the principal goals of this experiment is to create a data sample which will allow us to precisely characterize
+and improve tracking and pattern recognition algorithms of a realistic detector, there must be ways to distinguish signals
+due to the incident beam particle vs various sources of background, of which most important is the cosmic ray background.
+Since overlay of cosmic ray muons over beam events is stochastic in nature, we need to make an effort to record those
+signals which were produced ``just before'' and ``just after'' the arrival of the test particle from the beamline, and thus
+be able to account for partial background tracks in the main event, with a high degree of certainty. Since the natural time
+scale of the detector is the total drift time for the collection volume, this leads to the requirement that we record three time windows
+instead of one. For the purposes of the data volume bookkeeping, this translated into adding three muon tracks worth of data,
+to the nominal event.
+
+
+\subsubsection{Statistics and the Volume of Data}
+\label{bin_table}
+Experimental program for the test includes triggering on a few types of particles over a range of momenta. We introduce
+bins for the particle momenta as shown in the table below. The estimated event sizes listed in the table are based on
+Monte Carlo studies performed earlier for the 10kt version of the LBNE Far Detector. Hadronic and electromagnetic
+showers were included in these estimates. As a concrete example, for an incident electron of 4GeV/c momentum
+calculations indicate an average event size of $\sim$2MB, after zero-suppression.
+
+
+\begin{center}
+\begin{tabular}[h]{|l|r|r|r|r|}
+  \hline
+ Particle & Momentum Range& Bin         & Approx. event & Approx. \#\\
+ Type    &  (GeV/c)                 & (MeV/c) & size, MB & of events, $10^6$\\
+  \hline
+  $p$ & 0.1-2.0 & 100 & 1 & 1 \\
+  $p$ & 2.0-10.0 & 200 & 5 & 1 \\
+  \hline
+   $\mu^{\pm}$ & 0.1-1.0 & 50  & 1 & 1 \\
+   $\mu^{\pm}$ & 1.0-10.0 & 200  & 5 & 1 \\
+%   $\mu^{\pm}$ & $>$100 & ?  & 20 & 1 \\
+  \hline
+   $e^{\pm}$ & 0.1-2.0 & 100 & 1  & 1 \\
+   $e^{\pm}$ & 2.0-10.0 & 200  & 4 & 1 \\
+  \hline
+   $K^{+}$ & 0.1-1.0 & 100 & 1  & 1 \\
+  \hline
+   $\gamma(\pi^{0})$ & 0.1-2.0 & 100  & 1 & 1 \\
+   $\gamma(\pi^{0})$ & 2.0-5.0 & 200  & 5 & 1 \\
+  \hline
+\end{tabular}
+\end{center}
+
+Prelimiary plans call for statistics of the order of $10^5 - 10^6$  events to be collected in each bin, so in the table above we marked
+it as nominal 1M events for each entry. The requirements to the scale of these statistics are currently being refined.
+
+Depending on the assumptions, this translates into $\sim$220 million events total (for all event classes) to ensure enough statistics for subsequent analysis. Utilizing
+a spreadsheet model, and taking into account the cosmic ray overlay and additional readout windows as explained in~\ref{readout_windows}, we arrive to a number
+of $\sim$3PB for total storage space necessary to host \textbf{the raw data}. This needs to be looked at as the basis for tape budget. As explained below, this
+volume of data needs to be replicated for assured preservation, in at least one more additional facility, hence in effect this number must be doubled when budgeting
+tape.
+
+\subsubsection{Data Acquisition and Storage}
+\label{daq_and_storage}
+The Data Acquisition System used in this experiment will be derived from the system currently used in the 35t Liquid Argon prototype being commissioned at FNAL. We foresee three Linux workstations equipped with interface cards to be used for data readout. It will be necessary to provide a stage-out disk space (a few tens of TB in size) to serve as a buffer for the DAQ system, from which the data will be transmitted to
+\begin{itemize}
+\item Tape storage at CERN.
+\item Storage facility at Fermilab, where the data will be written to tape and also staged in dCache as necessary for express analysis.
+\item \textit{Optional} other locations, such as auxiliary storage at Brookhaven National Laboratory , which is now being planned according to the data volumes
+estimated in this paper. NERSC facility has considerable potential in serving as an additional data hub. Partial copies will be transmitted to other National Laboratories
+and research centers.
+\end{itemize}
+
+Considerable volume of the raw data makes unlikely that it will be all staged on disk at any single location, in its entirety. We foresee the
+ need for ample amount of tape storage, and a smaller disk space ($\sim$0.5-1.0PB) for staging raw data coming out of the detector - in transit to tape
+storage and CERN and the US facilities.
+
+\subsubsection{Raw Data Transmission and Distribution}
+As mentioned in~\ref{daq_and_storage}, at least two full replicas will exist for the raw data - at CERN and at FNAL (and likely an additional replica at BNL). Moving data outside CERN
+is subject to a number of requirements that include:
+\begin{itemize}
+\item automation
+\item monitoring
+\item error checking and recovery (redundant checks to ensure the ``precious'' data was successfully sunk to mass storage at the endpoint)
+\item compatibility with lower-level protocols that are widespread, well uncerstood and maintained (cf. gridFTP)
+\end{itemize}
+
+There are a number of systems that can satisfy these requirements, and one of them where we possess sufficient expertise and experience is Spade, first used in IceCube~\cite{spade_icecube} and then enhanced and successfully utilized in Daya Bay experiment~\cite{spade_dayabay}.
+
+Note that at this stage of the lifecycle of the data we foresee transmission between fixed endpoints (with sufficient degree of automation, checking, redundancy etc) but we haven't discussed yet the topic of how such
+data is made available to researchers who wish process it at their home institution or on the Grid/in the Cloud - this will be addressed in~\ref{wms}.
+
+
+\subsection{Databases}
+A few types of databases will be required:
+\begin{itemize}
+\item Run Log, Conditions and Slow Controls records
+\item Offline Calibrations
+\end{itemize}
+
+Databases listed in the former item will need to be local to the experiment in order to reduce latency, improve reliability, reduce downtime dut to
+network outages etc.
+A replication mechanism will need to be put in place the data is readily available at the US and other sites. The volume of data
+stored in these databases will likely to be quite modest.
+
+As to the offline calibrations, for optimal access, such databases should be located closer to the location where most processing will take place.
+FNAL is a good candidate for that (also from the support point of view), and we shall also consider replication of these database to other
+research institutions.
+
+\subsection{A note on Simulation and Reconstruction Software}
+Research effort connected to the ``Full Scale'' prototype at CERN will benefit from utilizing simulation toolkits, and tracking and other reconstruction
+algorithms created by communities such as former LBNE, and especially during the 35t test at FNAL. In order to leverage this
+software and expertise, appropriate manpower will need to be allocated in order to create and maintain physics analysis tools
+necessary to fulfill the research goals of this experiment.
+
+These tools will reply on software components which will need to be portable, well maintained and validated, given
+the widely distributed nature of the Collaboration and the need to use geographically dispersed resources. To ensure that this happens,
+we plan to establish close cooperation among participating laboratories and other research institutions. The software will also need
+to be amenable to running on Grid facilities, and will require Distributed Data capability (see~\ref{wms}).
+
+\subsection{Distributed Computing, Workload and Workflow Management}
+\label{wms}
+\subsubsection{Scale of the Processed Data}
+According to our estimates, the volume of raw data will be in the petabyte range. The offline data can be classified as follows:
+\begin{itemize}
+\item Monte Carlo data, which will contain multiple event samples to cover various event types and other conditions during the measurements with the prototype detector
+\item Data derived from Monte Carlo events, and produced with a variety of tracking and pattern recognition algorithms in order to create a basis for the detector characterization
+\item Intermediate calibration files, derived from calibration data
+\item Processed experimental data, which will likely exist in a few brunches corresponding to a few reconstruction algorithms being applied, with the purpose of their evaluation
+\end{itemize}
+
+In the latter, there will likely be more than one processing step, thus multiplying data volume. There is sometimes a question about how much of the raw data should be preserved in
+the processed data streams. Given a relatively large volume of raw data, the answer in this case will likely be ``none'' - for practical reasons, meaning that the derived data will
+be just that, and that the size of the processed data will likely by significantly smaller than the input (the raw data). Given consideration presented above, we will plan for
+$\sim$1PB of tape storage to keep the processed data. For efficient processing, disk storage will be necessaty to stage a considerable portion of both raw data (inputs) and
+one or a few steps in processing (outputs).
+
+Extrapolating from our previous experience running Monte Carlo for the former LBNE Far Detector, we estimate that we'll need a few hundred TB of continuously available
+disk space. In summary, we request 2PB of disk storage at FNAL to ensure optimal data availability and processing efficiency. Access to distributed data is discussed below.
+
+\subsubsection{Distributed Data}
+We foresee that data analysis (both experimental data and Monte Carlo) will be performed by collaborators residing in many institurions and geographically dispersed. In our
+estimated above, we mostly outlined storage space requirements for major data centers like CERN and FNAL. When it comes to making these data available to the researchers,
+we will utilize a combination of the following:
+\begin{itemize}
+\item Managed replication of data in bulk, performed with tools like Spade discussed above. Copies will be made according to wishes and capabilities of participating institutions.
+\item Network-centric federated storage, based on XRootD. This allows for agile, just-in-time delivery of data to worker nodes and workstations over the network. This
+technology has been evolving rapidly in the past few years, and solutions have been found to mitigate performance penalty due to remote data access, by implementing caching
+and other techniques.
+\end{itemize}
+
+In order to act on the latter item, we plan to implement a global XRootD redirector, which will make it possible to transparently access data from anywhere.
+A concrete technical feature of storage at FNAL is that there is a dCache network running at this facility, with substantial capacity which can be leveraged
+for the needs of the CERN prototype analysis. This dCache instance is equipped with a XRootD ``door'' which makes it accessible to outside world, subject
+to proper configuration, authentication and authorization.
+
+As already mentioned, we plan to host copies of a significant portion of raw and derived data at Brookhaven National Laboratory, where substantial expertise
+exists in the field of data handling and processing at scale, due to the principal role this Laboratory plays in both RHIC (e.g. STAR) and ATLAS experiments.
+Initial simple tests of XRootD federation to access data residing at FNAL, from a XRootD instance located at BNL have been successful. At this point in time we
+are formulating the hardware requirements that need to be fulfilled in order for BNL to play the role of an additional data center as described here.
+
+
+\subsubsection{Distributed Processing}
+At the time of writing, FNAL provides the bulk of computational power for LBNE (not to mention a few other IF experiments), via Fermigrid and other facilities.
+We plan to leverage these resources to process the prototype data. At the same time, we envisage a more distributed computing model where Grid resources
+are available transparently and sometimes on the opportunistic basis, using facilities made available by national Grids and in the case of the United States, by
+the Open Science Grid Consortium.
+
+There are currently very large uncertainties regarding what scale of CPU power will be required to process the data, given that tracking, reconstruction and
+other algorithms are in a fairly early stage of development. The best estimates we have at this point range from 10 to 100 seconds required by a typical
+CPU to reconstruct a single event. This means that utilizing a few thousand cores through Grid facilities, it will be possible to ensure timely processing of these data.
+
+We have not chosen yet the type of Workload Management System to be used for the purposes of the CERN prototype test. Currently, many researchers at FNAL
+are using the \textit{jobsub} tool, which opens access to Fermigrid and additionally to the Open Science Grid and Cloud resources. There are other capable (and arguably
+more sophisticated) system being used, for example by the LHC experiments. We plan to conduct an evaluation of these systems with a view to adopt a different
+solution if necessary.
+
+
+
+\end{document}
 
