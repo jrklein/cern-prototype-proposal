@@ -1,0 +1,35 @@
+
+%% Wrapper to generate chapter 3 independently
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+
+\textwidth=6.0in
+\textheight=8.5in
+%\topmargin=-0.50in
+\topmargin=0.0in
+\oddsidemargin 0.5 in
+\evensidemargin 0.5 in
+\overfullrule 0pt
+\hyphenation{LArIAT}
+
+%ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+%Back compatibility for an old restriction.
+%\let\Huge=\large
+%\let\huge=\large
+%\let\LARGE=\large
+%\let\Large=\normalsize
+\let\Large=\large
+\let\large=\normalsize
+%ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+
+\begin{document}
+
+%%%%  Block to compile separately
+\setcounter{section}{2}
+\section{Single Phase LAr Detector}
+\input{singlephasedet}
+
+
+
+\end{document}
