@@ -30,8 +30,7 @@
 \usepackage{graphicx, subfigure}
 
 
-
-
+\setcounter{tocdepth}{2}
 
 \begin{document}
 
@@ -59,24 +58,27 @@ insert abstract here
 
 \section{Introduction [$\sim$5 pages; {\color{red} Thomas/Greg/Bob Wilson}]}
 	\input{introduction}
+%	\input{../150212_introduction_Greg}
 
 \section{CERN prototype detector and charged particle beam test [$\sim$10 pages; {\color{red} Donna/Jarek}]}
 	\input{detbeamtest}
 	
 
 \section{Single Phase LAr Detector [$\sim$10 pages; {\color{red} J. Stewart et al.}]}
+\rm
+
 	\input{singlephasedet}
 
 
 \section{Cryostat and cryogenics system [$\sim$5 pages; {\color{red} David/Barry/Jack}]}
 	\input{cryo.tex}
 
-
+\newpage
 \section{Charged Particle Test Beam Requirements [$\sim$10 pages; {\color{red} Cheng-Ju}]}
 	\input{testbeamreq}
 
 
-\section{Computing requirements, data handling and software  [$\sim$3 pages; {\color{red} Maxim/Graig}]}
+\section{Computing requirements, data handling and software  [$\sim$3 pages; {\color{red} Maxim Potekhin/Craig Tull }]}
 	\input{computing}
 
 \section{CERN neutrino platform test environment [5 pages; {\color{red} David/Jack/Cheng-Ju/Thomas}]}
@@ -89,6 +91,8 @@ insert abstract here
 \section{Summary [$\sim$2 pages; {\color{red} Thomas/Greg}]}
 	\input{summary}
 
+
+\input{bibliography}
 
 $\rightarrow$ total estimated page count: $\sim$60 pages
 \end{document}

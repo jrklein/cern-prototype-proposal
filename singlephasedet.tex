@@ -1,77 +1,71 @@
+
+
+%\documentclass[12pt]{article}
+%\usepackage{graphicx}
+
+%\textwidth=6.0in
+%\textheight=8.5in
+%\topmargin=-0.50in
+%\topmargin=0.0in
+%\oddsidemargin 0.5 in
+%\evensidemargin 0.5 in
+%\overfullrule 0pt
+%\hyphenation{LArIAT}
+
+%
+%Back compatibility for an old restriction.
+%\let\Huge=\large
+%\let\huge=\large
+%\let\LARGE=\large
+%\let\Large=\normalsize
+%\let\Large=\large
+%\let\large=\normalsize
+%
+
+%\begin{document}
+
+%%%%  Block to compile separately
+
 \subsection{LBNF detector}
-Description of LBNF far detector components
-\begin{itemize}
-\item Overview of the far detector option
-\begin{itemize}
-\item List major components
-\end{itemize}
-\item Dimensions
-\item Need for Modularity
-\item Scaling from previous detectors
-\item Possible development paths
-\item Parameter summary
-\end{itemize}
+
+The far detector for the ELBNF collaboration will be a series of four xx kt (10 kt) active (fiducial) volume  liquid argon time projection chambers instrumented with photon detection. It is planned that the first 10 kt detector will be ready for commissioning in 2021. One option for the TPC design is a wire plane based TPC with cold electronics readout. Designs of this style are are referred to as single-phase detectors as the charge generation, drift, and detection all occurs in the argon liquid phase. This style TPC has the advantage that there is no charge amplification before collection making a very precise charge measurement possible. To achieve ELBNF's goals, a detector much larger than ICARUS, the largest LAr TPC detector built to date, is needed. ELBNE is developing a scalable far detector design shown in Figure \ref{fig:fardet-overview} that would scale-up LAr TPC technology by roughly a factor of 50 compared to the ICARUS T600 detector. To achieve this scale-up, a number of novel design elements need to be employed. A membrane cryostat typical for the liquefied natural gas industry will be used instead of a conventional evacuated cryostat. The wire planes or anode plane assemblies (APAs) will be factory-built as planar modules that are then installed into the cryostat. The modular nature of the APAs allow the size of the detector to be scaled up to at least 40 kt fiducial mass. Both the analog and digital electronics will be mounted on the wire planes inside the cryostat in order to reduce the electronic noise, to avoid transporting analog signals large distances, and to reduce the number of cables that penetrate the cryostat. The scintillation photon detectors will employ light collection paddles to reduce the required photo-cathode area. Many of the aspects of the design will be tested in a small scale prototype at Fermilab but given the very large scale of the detector elements a full-scale test is highly desirable.
+
+
+
+\begin{figure}[!htb]
+\centering
+\begin{minipage}[b]{1.0\textwidth}
+\begin{center}
+\includegraphics[width=.75\textwidth]{./figures/fardet-3D.png}
+%\includegraphics[width=0.7\textwidth]{EndView-sketch.png}
+\end{center}
+\end{minipage}
+\caption{\small 3D model of one design of the ELBNF single-phase detector. Shown is 5kt fiducial volume detector which would need to be lengthened for the 10 kt design. The present ELBNF plan calls for the construction of 4 10 kt detectors of similar design. }
+\label{fig:fardet-overview}
+\end{figure}
+
+The goals of the LBNE detector test can be broken into four categories: argon contamination mitigation verification, TPC mechanical verification, TPC electrical verification, and photon detection light yield verification. Research at Fermilab utilizing the Materials Test Stand has shown that electronegative contamination to the ultra-pure argon from all materials tested is negligible if the material is under the liquid argon. This implies that the dominant source of contamination originates from the gas ullage region and in the room temperature connections to the detector. Careful design of the ullage region to insure that all surfaces and feedthroughs are cold is expected to greatly reduce the sources of contamination over what exists in present detectors. Other concepts attempt to eliminate the gas ullage completely. The goals related to mechanical testing are to test the integrity of the detector. In the current design, each APA measures 2.3 m by 6.0 m and includes 2560 wires and associated readout channels. Given the complexity of these assemblies, a test where the detector can be thermally cycled and tested under operating conditions is highly advised prior to mass production. The mechanical support of the APAs can be tested to verify that the mechanical design is reliable and will accommodate any necessary motion between the large wire planes. The impact of vibration isolation between the cryostat roof and the detector can also be tested. Finally a potential improvement in the cryostat design is the possibility to move the pumps external to the main cryostat. This will reduce any mechanical coupling to the detector and also greatly improve both reliability and ease of repair. The electrical testing goals are to insure that the high voltage design is robust and that the required low electronic noise level can be achieved. As the detector scale increases so does the capacitance and the stored energy in the device. The design of the field cage and high voltage cathode planes needs to be such that HV discharge is unlikely and that if the event occurs no damage to the detector or cryostat results. The grounding and shielding of large detectors is also critical for low noise operation. By testing the full scale elements one insures that the grounding plan is fully developed and functional. Large scale tests of the resulting design will verify the electrical model of the detector. 
 
 
 \subsection{CERN prototype detector}
-Detailed description of CERN prototype detector components
-%\begin{itemize}
+
 \subsubsection{Overview of the CERN test Detector}
 
-\textbf{TPC description and size (from Jack Fowler)}
 
-The TPC will be assembled from elements that are of the same size as those planned for the single phase 
-far detector.  The overall size of the TPC will be derived by the size and number of anode planes (APA).  It 
-has been determined in order to perform the required physics, the TPC will consist of three APAs.  The 
-APAs will have an active area 2.29 m wide and 6.0 m high.  These active area dimensions result in an APA 
-that is 2.32 m wide and 6.29 m high.  The combination of the three APAs will determine the overall length 
-of the TPC.  This is 7.2 m.  There will be a cathode plane (CPA) on either side of the APAs.  The size of the 
-CPAs is determined by the active area of the three APAs.  The active area of the three APAs is 
-approximately 7.2 m wide by 6.2 m high.  The drift distance between the CPAs and row of APAs will be 2.5 
-m.  The overall width of the TPC will be determined by a combination of the drift distances along with the 
-thickness of the APA, which is constructed of 3” x 4” stainless steel (SS) structural tubing.  The overall 
-width of the TPC is 5.2 m.  Like the length of the TPC, the overall height will be determined by the height 
-of the APA.  The overall height of the TPC will be 6.3 m.  The TPC dimensions will be 7.2 m long x 5.2 m 
-wide x 6.3 m high.
+The TPC will be assembled from elements that are of the same size as those planned for the single phase far detector.  The overall size of the TPC will be derived by the size and number of anode planes (APA).  It has been determined in order to perform the required physics, the TPC will consist of three APAs.  The APAs will have an active area 2.29 m wide and 6.0 m high.  These active area dimensions result in an APA that is 2.32 m wide and 6.29 m high.  The combination of the three APAs will determine the overall length of the TPC.  This is 7.2 m.  There will be a cathode plane (CPA) on either side of the APAs.  The size of the CPAs is determined by the active area of the three APAs.  The active area of the three APAs is approximately 7.2 m wide by 6.2 m high.  The drift distance between the CPAs and row of APAs will be 2.5 m.  The overall width of the TPC will be determined by a combination of the drift distances along with the thickness of the APA, which is constructed of 3$^{\prime\prime}$ x 4$^{\prime\prime}$ stainless steel (SS) structural tubing.  The overall width of the TPC is 5.2 m.  Like the length of the TPC, the overall height will be determined by the height of the APA.  The overall height of the TPC will be 6.3 m.  The TPC dimensions will be 7.2 m long x 5.2 m wide x 6.3 m high. Along with the APAs and CPAs, the TPC will include a field cage that surrounds the entire assembly.  It will be designed similarly to the field cage in phase 2 of the 35t experiment at FNAL.  This is a series of protruded fiberglass I beams for the structural elements.  These I-beams will be tiled with large copper sided FR4 panels to create the field cage.  Each panel will be connected with a series of resistors.  The field cage will be connected to the CPAs through a capacitor assembly.
 
-Along with the APAs and CPAs, the TPC will include a field cage that surrounds the entire assembly.  It will 
-be designed similarly to the field cage in phase 2 of the 35t experiment at FNAL.  This is a series of 
-protruded fiberglass I beams for the structural elements.  These I-beams will be tiled with large copper 
-sided FR4 panels to create the field cage.  Each panel will be connected with a series of resistors.  The field 
-cage will be connected to the CPAs through a capacitor assembly.
-
-All of this will be supported by rows of I-beams supported from a mechanical structure above the cryostat.  
-The hangers for these I-beams will pass through the insulated top cap.  There will be a series of feed thru 
-flanges in the top cap of the cryostat to bring in and take out services for the TPC.  There will be a HV feed 
-thru for each of the CPAs and one signal feed thru for each of the APAs
+All of this will be supported by rows of I-beams supported from a mechanical structure above the cryostat.  The hangers for these I-beams will pass through the insulated top cap.  There will be a series of feed thru flanges in the top cap of the cryostat to bring in and take out services for the TPC.  There will be a HV feed thru for each of the CPAs and one signal feed thru for each of the APAs
 
 \textbf{Cryostat size from TPC dimensions  (from Jack Fowler)}
 
 The minimum internal size of the cryostat is determined from size of the TPC.  At the bottom of the 
-cryostat there needs to be a minimum of 0.3 m between the frame of the CPA and closest point on the SS 
-membrane.  This is to prevent high voltage discharge between the CPA and the electrically grounded 
-membrane. It is foreseen that there would be some cryogenic piping and instrumentation under the TPC.  
-There is a height allowance of 0.1 m for this.  There will be access and egress space around the outside 
-of the TPC and the membrane walls.  On three sides, 1.0 m of space is reserved for this.  The final side of 
-the TPC will have piping and instrumentation for the cryogenic system.  There will be 1.3 m of space 
-reserved for this.  
+cryostat there needs to be a minimum of 0.3 m between the frame of the CPA and closest point on the SS membrane.  This is to prevent high voltage discharge between the CPA and the electrically grounded membrane. It is foreseen that there would be some cryogenic piping and instrumentation under the TPC.  There is a height allowance of 0.1 m for this.  There will be access and egress space around the outside of the TPC and the membrane walls.  On three sides, 1.0 m of space is reserved for this.  The final side of the TPC will have piping and instrumentation for the cryogenic system.  There will be 1.3 m of space reserved for this.  
 
-The support system for the TPC will be located at the top between the underside of the cryostat roof and 
-the top of the TPC.  The plan is to model this space similar to what is planned for the far site TPC.  There 
-will be 0.9 m of ullage space.  In order to prevent high voltage discharge, the upper most part of the CPA 
-needs to be submerged a minimum of 0.3 m below the liquid Argon surface.  The top of the TPC will be 
-separated from the membrane by a minimum of 1.2 m.  
+The support system for the TPC will be located at the top between the underside of the cryostat roof and  the top of the TPC.  The plan is to model this space similar to what is planned for the far site TPC.  There will be 0.9 m of ullage space.  In order to prevent high voltage discharge, the upper most part of the CPA needs to be submerged a minimum of 0.3 m below the liquid Argon surface.  The top of the TPC will be separated from the membrane by a minimum of 1.2 m.  
 
-Adding all of these to the size of the TPC yields the minimum inner dimensions of the cryostat.  A 
-minimally sized cryostat would be 9.5 m long, 7.3 m wide and 8.4 m high.  This assumes the TPC will be 
-positioned inside the cryostat with the CPAs and end field cages parallel to the walls of the cryostat.  Also 
-there is no space allotted for a beam window to enter the cryostat.  Clearance would need to be added if 
-it violates any of the current boundaries listed above.  
-These dimensions also preserve the ability to reverse the order of the APAs and CPAs inside the TPC.  The 
-current plan is to have the APAs located in the center of the cryostat with a CPA on each side.  Reversing 
-this to have the CPA in the center and APAs on each side may be required to achieve some of the 
-proposed physics.  The orientation of the TPC components will be finalized after various scenarios have 
-been sufficiently simulated.  
+Adding all of these to the size of the TPC yields the minimum inner dimensions of the cryostat.  A minimally sized cryostat would be 9.5 m long, 7.3 m wide and 8.4 m high.  This assumes the TPC will be positioned inside the cryostat with the CPAs and end field cages parallel to the walls of the cryostat.  Also there is no space allotted for a beam window to enter the cryostat.  Clearance would need to be added if it violates any of the current boundaries listed above.  
+These dimensions also preserve the ability to reverse the order of the APAs and CPAs inside the TPC.  The current plan is to have the APAs located in the center of the cryostat with a CPA on each side.  Reversing this to have the CPA in the center and APAs on each side may be required to achieve some of the proposed physics.  The orientation of the TPC components will be finalized after various scenarios have been sufficiently simulated.  
+
 
 
 \subsubsection{Parameters table}
@@ -171,47 +165,22 @@ during the installation process the hanging TPC elements are in a dimensionally 
 required accuracy of the survey is not expected to be finer than a few mm.  
 %\end{itemize}
 
-\subsubsection{APA}
-\begin{itemize}
-\item General description of the APA
-\item Justification for the basic design (Dimensions, wire Wrapping, wire pitch and angle, hung nature)
-\item Description of construction technique
-\end{itemize}
+% File from Bo Yu on the TPC component design
+\input{APA-CP-FieldCage}
 
-\subsubsection{CPA and Field Cage}
-\begin{itemize}
-\item General description of the CPA - material, HV coupling, Stored energy, ….
-\item Description of construction and installation
-\item General description of the field cage
-\item Description of design alternatives and engineering plan
-\item Overview of design and installation plan
-\end{itemize}
 
 \subsubsection{TPC Readout}
-\include{readout}
-\begin{itemize}
-\item Overview of the TPC readout chain (include main parameters)
-\item Overview of the cold electronics
-\item Overview of the RCE and interface to the DAQ
-\item	Discussion of sparsification and triggering
-\end{itemize}
+\input{readout}
+
 
 \subsubsection{Photon Detection System}
-\begin{itemize}
-\item General description of the photon system including requirements
-\item Overview of the photon system alternatives and selection process
-\item Description of the readout and development plans
-\end{itemize}
+\input{photondetector}
 
 \subsubsection{DAQ, Slow control and monitoring}
-\include{DAQ}
-\begin{itemize}
-\item General description of the DAQ system
-\item Plans and status for the 35t and next steps
-\item Needs for a slow control system
-\end{itemize}
-
-\subsubsection{Offline requirements and software}
+\input{DAQ}
 
 
 
+
+
+%\end{document}
