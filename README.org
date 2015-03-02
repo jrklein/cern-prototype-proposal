@@ -41,3 +41,8 @@ To "=push=" your commits back to GitHub do:
 The "=pull=" is needed to first incorporate into your repository any changes that others may have pushed to GitHub since the last time you did a "=pull=".
 
 If you get annoyed at using passwords all the time it is recommended that you [[https://help.github.com/articles/generating-ssh-keys/][use ssh keys]] but you can also [[https://help.github.com/articles/caching-your-github-password-in-git/][cache your password]].
+** Autobuilder
+
+A PDF of the documented is generated through the services of [[https://www.sharelatex.com][ShareLaTeX]]:
+
+  https://www.sharelatex.com/github/repos/LBNE/cern-prototype-proposal
