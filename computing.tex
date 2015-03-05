@@ -65,7 +65,7 @@ the arrival of the test particle from the beamline (this will enables us to reco
 tracks present in the ``main'' event).
 
 To ensure complete collection of charge due to such tracks, the additional readout windows before and after 
-the beam event should equal the nominal total drift time for the collection volume. This will triple the amount of
+the beam event should equal the nominal total drift time for the collection volume (approx. 2.1ms). This will triple the amount of
 data due to cosmic rays, collected from the detector.
 
 
@@ -104,8 +104,8 @@ calculations indicate an average event size of $\sim$2MB, after zero-suppression
 
 Prelimiary plans call for statistics of the order of $10^4 - 10^5$  events to be collected in each bin.
 % so in the table above we marked it as nominal 1M events for each entry. The requirements to the scale of these statistics are currently being refined.
-Depending on the assumptions, this translates into $\sim$20 million events total (for all event classes) to ensure enough statistics for subsequent analysis. Utilizing
-a spreadsheet model, and taking into account the cosmic ray overlay and additional readout windows as explained in~\ref{readout_windows}, we arrive to a number
+Depending on the assumptions, this translates into $\sim$20 million events total (for all event classes) to ensure enough statistics for subsequent analysis.
+Taking into account the cosmic ray overlay and additional readout windows as explained in~\ref{readout_windows}, we arrive to a number
 of $\sim$1PB for total storage space necessary to host \textbf{the raw data}. This needs to be looked at as the basis for tape budget. As explained below, this
 volume of data needs to be replicated for assured preservation, in at least one more additional facility, hence in effect this number must be doubled when budgeting
 tape.
@@ -116,20 +116,20 @@ To fulfill the mission of this test beam experiment, we expect that we will need
 and a more modest disk space for raw data staging at CERN, for replication purposes. We envisage storing the primary copy of raw data
 at CERN, with replicas at additional locations. There will be additional requirements for processed and Monte Carlo data placement.
 
-\subsubsection{Data Acquisition and Storage}
-\label{daq_and_storage}
-The Data Acquisition System used in this experiment will be derived from the system currently used in the 35t Liquid Argon prototype being commissioned at FNAL. We foresee three Linux workstations equipped with interface cards to be used for data readout. It will be necessary to provide a stage-out disk space (a few tens of TB in size) to serve as a buffer for the DAQ system, from which the data will be transmitted to
-\begin{itemize}
-\item Tape storage at CERN.
-\item Storage facility at Fermilab, where the data will be written to tape and also staged in dCache as necessary for express analysis.
-\item \textit{Optional} other locations, such as auxiliary storage at Brookhaven National Laboratory , which is now being planned according to the data volumes
-estimated in this paper. NERSC facility has considerable potential in serving as an additional data hub. Partial copies will be transmitted to other National Laboratories
-and research centers.
-\end{itemize}
+%\subsubsection{Data Acquisition and Storage}
+%\label{daq_and_storage}
+%The Data Acquisition System used in this experiment will be derived from the system currently used in the 35t Liquid Argon prototype being commissioned at FNAL. We foresee three Linux %workstations equipped with interface cards to be used for data readout. It will be necessary to provide a stage-out disk space (a few tens of TB in size) to serve as a buffer for the DAQ %system, from which the data will be transmitted to
+%\begin{itemize}
+%\item Tape storage at CERN.
+%\item Storage facility at Fermilab, where the data will be written to tape and also staged in dCache as necessary for express analysis.
+%\item \textit{Optional} other locations, such as auxiliary storage at Brookhaven National Laboratory , which is now being planned according to the data volumes
+%estimated in this paper. NERSC facility has considerable potential in serving as an additional data hub. Partial copies will be transmitted to other National Laboratories
+%and research centers.
+%\end{itemize}
 
-Considerable volume of the raw data makes unlikely that it will be all staged on disk at any single location, in its entirety. We foresee the
- need for ample amount of tape storage, and a smaller disk space ($\sim$0.5-1.0PB) for staging raw data coming out of the detector - in transit to tape
-storage and CERN and the US facilities.
+%Considerable volume of the raw data makes unlikely that it will be all staged on disk at any single location, in its entirety. We foresee the
+% need for ample amount of tape storage, and a smaller disk space ($\sim$0.5-1.0PB) for staging raw data coming out of the detector - in transit to tape
+%storage and CERN and the US facilities.
 
 \subsubsection{Raw Data Transmission and Distribution}
 As mentioned in~\ref{daq_and_storage}, at least two full replicas will exist for the raw data - at CERN and at FNAL (and likely an additional replica at BNL). Moving data outside CERN
@@ -143,8 +143,8 @@ is subject to a number of requirements that include:
 
 There are a number of systems that can satisfy these requirements, and one of them where we possess sufficient expertise and experience is Spade, first used in IceCube~\cite{spade_icecube} and then enhanced and successfully utilized in Daya Bay experiment~\cite{spade_dayabay}.
 
-Note that at this stage of the lifecycle of the data we foresee transmission between fixed endpoints (with sufficient degree of automation, checking, redundancy etc) but we haven't discussed yet the topic of how such
-data is made available to researchers who wish process it at their home institution or on the Grid/in the Cloud - this will be addressed in~\ref{wms}.
+%Note that at this stage of the lifecycle of the data we foresee transmission between fixed endpoints (with sufficient degree of automation, checking, redundancy etc) but we haven't %discussed yet the topic of how such
+%data is made available to researchers who wish process it at their home institution or on the Grid/in the Cloud - this will be addressed in~\ref{wms}.
 
 
 \subsection{Databases}
@@ -159,9 +159,9 @@ network outages etc.
 A replication mechanism will need to be put in place the data is readily available at the US and other sites. The volume of data
 stored in these databases will likely to be quite modest.
 
-As to the offline calibrations, for optimal access, such databases should be located closer to the location where most processing will take place.
-FNAL is a good candidate for that (also from the support point of view), and we shall also consider replication of these database to other
-research institutions.
+%As to the offline calibrations, for optimal access, such databases should be located closer to the location where most processing will take place.
+%FNAL is a good candidate for that (also from the support point of view), and we shall also consider replication of these database to other
+%research institutions.
 
 \subsection{A note on Simulation and Reconstruction Software}
 Research effort connected to the ``Full Scale'' prototype at CERN will benefit from utilizing simulation toolkits, and tracking and other reconstruction
