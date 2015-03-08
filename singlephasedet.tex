@@ -38,7 +38,7 @@ This sections presents the design details of a single-phase detector based on th
 
 This TPC consists of alternating anode plane assemblies (APAs) and cathode plane assemblies (CPAs), with field-cage panels enclosing the four open sides between the anode and cathode planes.  Figure  \ref{fig:CERNdet-overview} shows a sectioned view for the planned TPC inside the cryostat at CERN.  A uniform electric field is created in the volume between the anode and cathode planes. A charged particle traversing this volume leaves a trail of ionization. The electrons drift toward the anode plane, which is constructed from multiple layers of sense wires, inducing electric current signals in the front-end electronic circuits connected to the wires.
 
-To the extent possible TPC will be assembled from elements that are of the same size as those planned for the single phase far detector.  The overall size of the TPC will be derived by the size and number of anode planes (APA).  It has been determined in order to perform the required physics, the TPC will consist of three APAs.  The APAs will have an active area 2.29 m wide and 6.0 m high.  These active area dimensions result in an APA that is 2.32 m wide and 6.29 m high.  The combination of the three APAs will determines the overall TPC length to be 7.2 m.  There will be a cathode plane (CPA) on either side of the APAs.  The size of the CPAs is determined by the active area of the three APAs.  The active area of the three APAs is approximately 7.2 m wide by 6.2 m high.  The drift distance between the CPAs and row of APAs was selected to be 2.5 m for the prototype detector instead of 3.4m which is foreseen for the far detector in order to limit the effects of space charge on the test beam data .  The overall width of the TPC will be determined by a combination of the drift distances along with the thickness of the APA, which is constructed of 3$^{\prime\prime}$ x 4$^{\prime\prime}$ stainless steel (SS) structural tubing.  The overall width of the TPC is 5.2 m.  Like the length of the TPC, the overall height will be determined by the height of the APA.  The overall height of the TPC will be 6.3 m.  The TPC dimensions will be 7.2 m long x 5.2 m wide x 6.3 m high. Along with the APAs and CPAs, the TPC will include a field cage that surrounds the entire assembly.  It will be designed similarly to the field cage in phase 2 of the 35t experiment at FNAL.  This is a series of pultruded fiberglass I beams for the structural elements.  These I-beams will be tiled with large copper sided FR4 panels to create the field cage.  Each panel will be connected with a series of resistors.  The field cage will be connected to the CPAs through a capacitor assembly.
+To the extent possible TPC will be assembled from elements that are of the same size as those planned for the single phase far detector.  The primary exception to this is the length of the field cage panels which are 2.5m in this design, compared to 3.4m in the far detector. This is to reduce the impact of space charge on the prototype necessitated by the surface operation. The overall size of the TPC will be derived by the size and number of anode planes (APA).  It has been determined in order to perform the required physics, the TPC will consist of three APAs.  The APAs will have an active (total) area 2.29 m (2.32 m) wide and 6.0 m (6.2 m) high . The combination of the three APAs will determines the overall TPC length to be 7.2 m. There will be a cathode plane (CPA) on either side of the APAs.  The overall width of the TPC will be determined by a combination of the drift distances along with the thickness of the APA, which is constructed of 3$^{\prime\prime}$ x 4$^{\prime\prime}$ stainless steel (SS) structural tubing.  The overall width of the TPC is 5.2 m.  Like the length of the TPC, the overall height will be determined by the height of the APA.  The overall height of the TPC will be 6.3 m.  In summary the external TPC dimensions will be 7.2 m long x 5.2 m wide x 6.3 m high. Along with the APAs and CPAs, the TPC will include a field cage that surrounds the entire assembly.  It will be designed similarly to the field cage in phase 2 of the 35t experiment at FNAL.  This is a series of pultruded fiberglass I beams for the structural elements.  These I-beams will be tiled with large copper sided FR4 panels to create the field cage.  Each panel will be connected with a series of resistors.  The field cage will be connected to the CPAs through a capacitor assembly.
 
 All of this will be supported by rows of I-beams supported from a mechanical structure above the cryostat.  The hangers for these I-beams will pass through the insulated top cap.  There will be a series of feed thru flanges in the top cap of the cryostat to bring in and take out services for the TPC.  There will be a HV feed thru for each of the CPAs and one signal feed thru for each of the APAs.
 
@@ -49,15 +49,25 @@ cryostat there needs to be a minimum of 0.3 m between the frame of the CPA and c
 The support system for the TPC will be located at the top between the underside of the cryostat roof and  the top of the TPC.  The plan is to model this space similar to what is planned for the far site TPC.  There will be 0.9 m of ullage space.  In order to prevent high voltage discharge, the upper most part of the CPA needs to be submerged a minimum of 0.3 m below the liquid Argon surface.  The top of the TPC will be separated from the membrane by a minimum of 1.2 m.  
 
 Adding all of these to the size of the TPC yields the minimum inner dimensions of the cryostat.  A minimally sized cryostat would be 9.5 m long, 7.3 m wide and 8.4 m high.  This assumes the TPC will be positioned inside the cryostat with the CPAs and end field cages parallel to the walls of the cryostat.  Also there is no space allotted for a beam window to enter the cryostat.  Clearance would need to be added if it violates any of the current boundaries listed above.  
+
 These dimensions also preserve the ability to reverse the order of the APAs and CPAs inside the TPC.  The current plan is to have the APAs located in the center of the cryostat with a CPA on each side.  Reversing this to have the CPA in the center and APAs on each side may be required to achieve some of the proposed physics.  The orientation of the TPC components will be finalized after various scenarios have been sufficiently simulated.  
 
 
+% File from Bo Yu on the TPC component design
+\input{APA-CP-FieldCage}
 
-\subsubsection{Parameters table}
+
+\subsubsection{TPC Readout}
+\input{readout}
+
+
+\subsubsection{Photon Detection System}
+\input{photondetector}
+
+\subsubsection{DAQ, Slow control and monitoring}
+\input{daq}
 
 \subsubsection{Installation}
-
-\textbf{Installation Plans for the TPC into the Cryostat  (from Jack Fowler)}
 
 The interior of the cryostat will be prepared prior to the installation of the TPC.  A series of support rails 
 will be suspended below the top surface of the cryostat membrane.  These will be structurally supported 
@@ -119,50 +129,12 @@ The installation sequence is planned to proceed as follows:
 \item Perform final test of all channels for expected electronics noise.
 \end{enumerate}
  
- In general, APA panels will be installed in order starting with the panel furthest from the hatch side of 
- the cryostat and progressing back towards the hatch. The upper field cage will be installed in stages as 
- the installation of APA and CPAs progresses.  After the APAs are attached to the support rods the 
- electrical connections will be made to electrical cables that were already dressed to the support beams 
- and electrical testing will begin. Periodic electrical testing will continue to assure that nothing gets 
- damaged during the additional work around the installed APAs.  
+In general, APA panels will be installed in order starting with the panel furthest from the hatch side of the cryostat and progressing back towards the hatch. The upper field cage will be installed in stages as the installation of APA and CPAs progresses.  After the APAs are attached to the support rods the electrical connections will be made to electrical cables that were already dressed to the support beams and electrical testing will begin. Periodic electrical testing will continue to assure that nothing gets  damaged during the additional work around the installed APAs.  
 
-  The TPC installation will be performed in three stages, each in a separate location; the locations, or 
-  zones, are shown in Figure x-xx (this illustration was made for a 34-kton, in-line underground 
-  detector, but the work zones are also applicable for the 10-kton surface siting). First, in the clean room 
-  vestibule, a crew will move the APA and CPA panels from storage racks, rotate to the vertical position 
-  and move them into the cryostat. Secondly, in the panel-staging area immediately below the equipment 
-  hatch of the cryostat, a second crew will transfer the lower panels from the crane to the staging 
-  platform, connect the upper and lower panels together, route cables to the top of stacked panels and f
-  inally transfer the stacked panels on to the monorail trolley that moves within the cryostat. A third crew 
-  will reposition the movable scaffolding and use the scaffold to make the mechanical and electrical 
-  connections at the top for each APA and CPA as they are moved into position. The monorails inside and 
-  outside the cryostat will each have two motorized trolleys so that work can be conducted by all three 
-  crews in parallel. The steady-state rate for installation, given this work plan and a single-shift schedule, 
-  is estimated to be two stacked panels per day.  
+The TPC installation will be performed in three stages, each in a separate location; the locations, or 
+zones. First, in the clean room vestibule, a crew will move the APA and CPA panels from storage racks, rotate to the vertical position and move them into the cryostat. Secondly, in the panel-staging area immediately below the equipment hatch of the cryostat, a second crew will transfer the lower panels from the crane to the staging platform, connect the upper and lower panels together, route cables to the top of stacked panels and finally transfer the stacked panels on to the rails within the cryostat. A third crew will reposition the movable scaffolding and use the scaffold to make the mechanical and electrical  connections at the top for each APA and CPA as they are moved into position.  
 
-The requirements for alignment and survey of the TPC are under development. Since there will be plenty 
-of cosmic rays in the surface detector and beam events, significant corrections can be made for any 
-misalignment of the TPC. The current plan includes using a laser guide or optical transit and the 
-adjustment features of the support rods for the TPC to align the top edges of the APAs in the TPC to be 
-straight, level and parallel within a few mm. The alignment of the TPC in other dimensions will depend on 
-the internal connecting features of the TPC.  The timing of the survey will depend on understanding when 
-during the installation process the hanging TPC elements are in a dimensionally stable state. The 
-required accuracy of the survey is not expected to be finer than a few mm.  
-%\end{itemize}
-
-% File from Bo Yu on the TPC component design
-\input{APA-CP-FieldCage}
-
-
-\subsubsection{TPC Readout}
-\input{readout}
-
-
-\subsubsection{Photon Detection System}
-\input{photondetector}
-
-\subsubsection{DAQ, Slow control and monitoring}
-\input{daq}
+The requirements for alignment and survey of the TPC are under development. Since there will be plenty  of cosmic rays in the surface detector and beam events, significant corrections can be made for any misalignment of the TPC. The current plan includes using a laser guide or optical transit and the adjustment features of the support rods for the TPC to align the top edges of the APAs in the TPC to be straight, level and parallel within a few mm. The alignment of the TPC in other dimensions will depend on the internal connecting features of the TPC.  The timing of the survey will depend on understanding when during the installation process the hanging TPC elements are in a dimensionally stable state. The required accuracy of the survey is not expected to be finer than a few mm.  
 
 
 
