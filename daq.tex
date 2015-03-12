@@ -17,12 +17,23 @@ transferred through the switch to a set of event building nodes
 which work in parallel, each node receiving all the data from all 
 the detectors for the time intervals it is responsible for processing.
 There will be 32 parallel incoming data streams from the LArTPCs
-and 16 streams from the photon detectors.  There will be an additional
-stream from the trigger board (the same board as built by Penn for
-the 35t test will be used) which will receive input of the spill 
-gate, warning of extraction, and pattern-unit bits from trigger counters
-and other beamline instrumentation such as Cerenkov counters [Which 
-section are these described in?, should we refer to them from here?].
+and 16 streams from the photon detectors.  
+
+	There will be an additional stream from the trigger board (the same
+board as built by Penn for the 35t test will be used) which will receive input
+of the spill gate, warning of extraction, and pattern-unit bits from trigger
+counters and other beamline instrumentation such as Cerenkov counters [Which
+section are these described in?, should we refer to them from here?]. The
+existing trigger board takes as input logical signals from the various sources,
+and provides both a hardware trigger signal as well as a trigger word
+specifying which triggers are active in any given event (beam spill, cosmic
+veto, calibration trigger, random trigger, etc.).  The trigger board is built
+around a MicroZED development board carrying a Xilinx Zynq 7020 and is
+therefore highly configurable, both through firmware (``process logic'') side
+and software (``process system'') side.  With small hardware modifications, the
+board could take analog inputs if, for example, the signals from beam
+instrumentation or veto counters are provided in a raw form from their
+front-end.
 
 Synchronisation across all the input sources is essential in order 
 that artDAQ can bring together the data from the input streams correctly for
