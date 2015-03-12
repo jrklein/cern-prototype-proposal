@@ -8,7 +8,7 @@ Monte Carlo studies necessary to support this program will be conducted utilizin
 
 In the test-beam setup, the detector performance will be characterized for different types of particles, e.g. $p$, $\pi^{\pm}$, $\mu^{\pm}$ etc (see~\ref{detbeam_main}).
 Current plans call for measurements in pre-defined bins of the incident particle momentum, which will have widths ranging from tens to
-hunderds of MeV (see~\ref{bin_table}). The volume of data to be recorded shall be determined by the number of events that need to be collected in each measurements that is
+hunderds of MeV (see~\ref{bin_table}). The volume of data to be recorded shall be determined by the number of events to be collected in each measurement, such that is
 provides adequately low statistical uncertainty of the parameters measured.
 
 In our view, it is optimal to first stage the ``precious'' data collected from the prototype on disk at CERN and then sink it to tape (also at CERN),
@@ -19,7 +19,7 @@ and the NERSC facility as useful additional locations for better redundancy and 
 
 \subsubsection{Considerations for Event Size Estimates}
 
-To set the scale, let's consider an approximate theoretical \textbf{upper limit} on the number of channels above the threshold
+To set the scale, let's consider an approximate \textbf{upper limit} on the number of channels with signals above the threshold
 of zero-suppression, for a single track. For this we assume digitization rate fixed at 2MHz, and 4312 samples per drift window. In a single
 anode plane assembly (APA), it will be approximately of the order of channel count in the APA, i.e. around 2500, \textit{when the track is parallel to the APA plane}.
 Since each sample is 16 bit (or 12 bit in more design), we arrive to the limit of approximately 20MB per single charged track.
@@ -44,13 +44,6 @@ to record light pulses produced in Argon due to scintillation caused by ionizing
 the Photon Detector will be quite small compared to that of the Liquid Argon TPC. Same goes for other elements of the experimental apparatus (hodoscopes,
 trigger systems etc) and as a result, for the purposes of this section, we shall focus only on the Liquid Argon TPC as the critical source of data.
 
-
-% From the two channel count numbers quoted above, we assume the smaller number of channels for the purposes of this discussion.
-
-
-%Some estimates for the scale of the data representing a charged track in the 0.5-10.0 GeV range (which is characteristic of the CERN test being planned)
-%can be made based on existing earlier calculations for the beam neutrino events as they would appear in the LBNE Far Detector.
-%We present quantitative estimates in~\ref{bin_table}.
 
 \subsubsection{``Before'' and ``After'' Readout Windows}
 \label{readout_windows}
